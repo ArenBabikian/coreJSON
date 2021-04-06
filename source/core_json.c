@@ -432,6 +432,10 @@ static bool skipHexEscape( const char * buf,
 static bool skipEscape( const char * buf,
                         size_t * start,
                         size_t max )
+__CPROVER_requires(max > 0 && max < CBMC_MAX_BUFSIZE && buf != NULL)
+__CPROVER_ensures(
+    (__CPROVER_return_value == true || __CPROVER_return_value == false) &&
+    ((__CPROVER_return_value == true) ==> *start <= max))
 {
     bool ret = false;
     size_t i;
@@ -629,6 +633,10 @@ static bool skipLiteral( const char * buf,
 static bool skipAnyLiteral( const char * buf,
                             size_t * start,
                             size_t max )
+__CPROVER_requires(max > 0 && max < CBMC_MAX_BUFSIZE && buf != NULL)
+__CPROVER_ensures(
+    (__CPROVER_return_value == true || __CPROVER_return_value == false) &&
+    ((__CPROVER_return_value == true) ==> *start <= max))
 {
     bool ret = false;
 

@@ -9,6 +9,21 @@
 # that may depend on targets defined in Makefile.common.
 ################################################################
 
+
+# handle function contracts
+$(HARNESS_GOTO)5.goto: $(HARNESS_GOTO)4.goto
+	$(LITANI) add-job \
+	  --command \
+	    '$(GOTO_INSTRUMENT) $(CBMC_VERBOSITY) $(ENFORCE_FUNCTIONS) $(REPLACE_FUNCTIONS) $^ $@' \
+	  --inputs $^ \
+	  --outputs $@ \
+	  --stdout-file $(LOGDIR)/enforce_replace_contracts-log.txt \
+	  --interleave-stdout-stderr \
+	  --pipeline-name "$(PROOF_UID)" \
+	  --ci-stage build \
+	  --description "$(PROOF_UID): enforcing/replacing function contracts"
+
+
 # Each proof requires core_json.c to be patched (using sed) and dumped into the
 # proof directory. The exact sed invocation differs for each proof. So each
 # proof must set the CORE_JSON_SED_EXPR variable, which this rule uses as the
