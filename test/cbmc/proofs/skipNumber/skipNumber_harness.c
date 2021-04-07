@@ -35,27 +35,16 @@ void harness()
     bool ret;
     int32_t * outValue;
 
-    /* max is the buffer length which must be nonzero for non-API functions. */
-    __CPROVER_assume( max > 0 );
-
-    /* max is the buffer length which must not exceed unwindings. */
-    __CPROVER_assume( max < CBMC_MAX_BUFSIZE );
-
-    /* buf must not be NULL */
+    /* the line below will eventually be replaced by a freshness 
+    clause in the precondition function */
     buf = malloc( max );
-    __CPROVER_assume( buf != NULL );
 
     ret = skipNumber( buf, &start, max );
 
-    __CPROVER_assert( isBool( ret ), "A bool value is returned." );
-
-    if( ret == true )
-    {
-        __CPROVER_assert( start <= max,
-                          "The buffer start index does not exceed the buffer length." );
-    }
-
+    /* I believe the case below is covered by the function contracts,
+    but I have kept it here just for reference */
     /* outValue may be NULL */
+    /*
     outValue = malloc( sizeof( *outValue ) );
 
     ret = skipDigits( buf, &start, max, outValue );
@@ -67,4 +56,5 @@ void harness()
         __CPROVER_assert( ( ( *outValue == -1 ) || ( ( *outValue >= 0 ) && ( *outValue <= MAX_INDEX_VALUE ) ) ),
                           "The converted integer is within the permitted range or is -1." );
     }
+    */
 }

@@ -14,7 +14,7 @@
 $(HARNESS_GOTO)5.goto: $(HARNESS_GOTO)4.goto
 	$(LITANI) add-job \
 	  --command \
-	    '$(GOTO_INSTRUMENT) $(CBMC_VERBOSITY) $(ENFORCE_FUNCTIONS) $(REPLACE_FUNCTIONS) $^ $@' \
+	    '$(GOTO_INSTRUMENT) $(CBMC_VERBOSITY) $(CONTRACTS_FLAGS) $^ $@' \
 	  --inputs $^ \
 	  --outputs $@ \
 	  --stdout-file $(LOGDIR)/enforce_replace_contracts-log.txt \

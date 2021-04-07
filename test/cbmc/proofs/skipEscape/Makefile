@@ -8,12 +8,12 @@ PROOF_UID=skipEscape
 # without tripping unwinding assertions and without exhausting memory.
 CBMC_MAX_BUFSIZE=14
 
-ENFORCE_FUNCTIONS = --enforce-contract skipEscape
-REPLACE_FUNCTIONS = 
+CONTRACTS_FLAGS += --enforce-contract skipEscape
+CONTRACTS_FLAGS += --replace-call-with-contract skipOneHexEscape
 
 UNWINDSET += skipEscape.0:$(CBMC_MAX_BUFSIZE)
 UNWINDSET += skipHexEscape.0:$(CBMC_MAX_BUFSIZE)
-UNWINDSET += skipOneHexEscape.0:$(CBMC_MAX_BUFSIZE)
+# UNWINDSET += skipOneHexEscape.0:$(CBMC_MAX_BUFSIZE)
 
 include ../Makefile-json.common
 

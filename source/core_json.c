@@ -320,6 +320,13 @@ static bool skipOneHexEscape( const char * buf,
                               size_t * start,
                               size_t max,
                               uint16_t * outValue )
+__CPROVER_assigns(*start, *outValue)
+__CPROVER_requires(( buf != NULL ) && ( start != NULL )
+                     && ( max > 0U ) && outValue != NULL )
+__CPROVER_ensures(
+    (__CPROVER_return_value == true) ==>
+        ( *start <= max && outValue != NULL)
+    )    
 {
     bool ret = false;
     size_t i, end;
@@ -432,10 +439,9 @@ static bool skipHexEscape( const char * buf,
 static bool skipEscape( const char * buf,
                         size_t * start,
                         size_t max )
-__CPROVER_requires(max > 0 && max < CBMC_MAX_BUFSIZE && buf != NULL)
-__CPROVER_ensures(
-    (__CPROVER_return_value == true || __CPROVER_return_value == false) &&
-    ((__CPROVER_return_value == true) ==> *start <= max))
+__CPROVER_requires( max > 0U && max < CBMC_MAX_BUFSIZE &&
+                    buf != NULL && start != NULL )
+__CPROVER_ensures( (__CPROVER_return_value == true) ==> *start <= max )
 {
     bool ret = false;
     size_t i;
@@ -568,6 +574,8 @@ static bool skipString( const char * buf,
 static bool strnEq( const char * a,
                     const char * b,
                     size_t n )
+__CPROVER_requires(n > 0 && n < CBMC_MAX_BUFSIZE && a != NULL && b != NULL)
+__CPROVER_ensures( true )
 {
     size_t i;
 
@@ -634,9 +642,7 @@ static bool skipAnyLiteral( const char * buf,
                             size_t * start,
                             size_t max )
 __CPROVER_requires(max > 0 && max < CBMC_MAX_BUFSIZE && buf != NULL)
-__CPROVER_ensures(
-    (__CPROVER_return_value == true || __CPROVER_return_value == false) &&
-    ((__CPROVER_return_value == true) ==> *start <= max))
+__CPROVER_ensures( (__CPROVER_return_value == true) ==> *start <= max )
 {
     bool ret = false;
 
@@ -671,6 +677,29 @@ static bool skipDigits( const char * buf,
                         size_t * start,
                         size_t max,
                         int32_t * outValue )
+__CPROVER_assigns(*start)
+__CPROVER_requires(max > 0 && max < CBMC_MAX_BUFSIZE &&
+                    buf != NULL && start != NULL)
+__CPROVER_ensures(
+    (__CPROVER_return_value == true) ==> ( *start <= max)
+    &&
+    (
+        (__CPROVER_return_value == true && 
+            (
+                outValue != NULL && 
+                (  
+                    ( *outValue == -1 )
+                    || 
+                    ( ( *outValue >= 0 ) && ( *outValue <= MAX_INDEX_VALUE ) )
+                )
+            )
+            ||
+            (outValue == NULL)
+        )
+        ||
+        (__CPROVER_return_value == false)
+    )
+)
 {
     bool ret = false;
     size_t i, saveStart;
@@ -790,6 +819,8 @@ static void skipExponent( const char * buf,
 static bool skipNumber( const char * buf,
                         size_t * start,
                         size_t max )
+__CPROVER_requires(max > 0 && max < CBMC_MAX_BUFSIZE && buf != NULL)
+__CPROVER_ensures( true )
 {
     bool ret = false;
     size_t i;
