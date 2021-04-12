@@ -64,6 +64,12 @@ typedef union
 static void skipSpace( const char * buf,
                        size_t * start,
                        size_t max )
+__CPROVER_requires( max > 0 && max < CBMC_MAX_BUFSIZE &&
+                    buf != NULL && start != NULL )
+__CPROVER_ensures ( 
+    /*( __CPROVER_return_value == true ) ==> *start <= max*/
+    true
+)
 {
     size_t i;
 
@@ -85,6 +91,9 @@ static void skipSpace( const char * buf,
  *
  * The high-order 1 bits of the first byte in a UTF-8 encoding
  * indicate the number of additional bytes to follow.
+ * 
+ * This function does not require a contracts because it is only
+ * called from skipUTF8MultiByte, which is replaced during proofs
  *
  * @return the count
  */
@@ -180,6 +189,12 @@ static bool shortestUTF8( size_t length,
 static bool skipUTF8MultiByte( const char * buf,
                                size_t * start,
                                size_t max )
+__CPROVER_requires( max > 0 && max < CBMC_MAX_BUFSIZE &&
+                    buf != NULL && start != NULL &&
+                    *start < max )
+__CPROVER_ensures ( 
+    ( __CPROVER_return_value == true ) ==> *start <= max
+)
 {
     bool ret = false;
     size_t i, bitCount, j;
@@ -244,6 +259,11 @@ static bool skipUTF8MultiByte( const char * buf,
 static bool skipUTF8( const char * buf,
                       size_t * start,
                       size_t max )
+__CPROVER_requires( max > 0 && max < CBMC_MAX_BUFSIZE &&
+                    buf != NULL && start != NULL )
+__CPROVER_ensures ( 
+    ( __CPROVER_return_value == true ) ==> *start <= max
+)
 {
     bool ret = false;
 
@@ -321,11 +341,23 @@ static bool skipOneHexEscape( const char * buf,
                               size_t max,
                               uint16_t * outValue )
 __CPROVER_assigns(*start, *outValue)
-__CPROVER_requires(( buf != NULL ) && ( start != NULL )
-                     && ( max > 0U ) && outValue != NULL )
+__CPROVER_requires(( buf != NULL ) 
+                    && ( start != NULL ) && *start > 0 && *start < 10
+                    && ( max > 0 ) && max < CBMC_MAX_BUFSIZE
+                    && outValue != NULL )
 __CPROVER_ensures(
-    (__CPROVER_return_value == true) ==>
-        ( *start <= max && outValue != NULL)
+    /*(__CPROVER_return_value == true) ==>
+        ( *start <= max && outValue != NULL)*/
+        true
+    /*start + 6U < max &&
+    buf[ start ] == '\\' &&
+    buf[ start + 1U ] == 'u' && 
+    __CPROVER_forall {
+    int j;
+    (0 <= j && j < 4U) ==>
+    (buf[ start + 2U + j ] >= 0x0U && buf[ start + 2U + j ] <= 0xFU)
+    } &&
+    outValue > 0x0000U && outValue <= 0xFFFFU*/
     )    
 {
     bool ret = false;
@@ -438,10 +470,17 @@ static bool skipHexEscape( const char * buf,
  */
 static bool skipEscape( const char * buf,
                         size_t * start,
+                        size_t init_start,
                         size_t max )
+__CPROVER_assigns(*start)
 __CPROVER_requires( max > 0U && max < CBMC_MAX_BUFSIZE &&
-                    buf != NULL && start != NULL )
-__CPROVER_ensures( (__CPROVER_return_value == true) ==> *start <= max )
+                    buf != NULL && start != NULL 
+                    && *start == init_start)
+__CPROVER_ensures( 
+    *start >= init_start
+    &&
+    ( (__CPROVER_return_value == true) ==> 
+    ( *start > init_start && *start <= max ) ) )
 {
     bool ret = false;
     size_t i;
@@ -509,6 +548,11 @@ __CPROVER_ensures( (__CPROVER_return_value == true) ==> *start <= max )
 static bool skipString( const char * buf,
                         size_t * start,
                         size_t max )
+__CPROVER_requires( max > 0 && max < CBMC_MAX_BUFSIZE &&
+                    buf != NULL && start != NULL)
+__CPROVER_ensures ( 
+    ( __CPROVER_return_value == true ) ==> *start <= max
+)
 {
     bool ret = false;
     size_t i;
@@ -907,6 +951,9 @@ static bool skipAnyScalar( const char * buf,
 static bool skipSpaceAndComma( const char * buf,
                                size_t * start,
                                size_t max )
+__CPROVER_requires( max > 0 && max < CBMC_MAX_BUFSIZE &&
+                    buf != NULL && start != NULL )
+__CPROVER_ensures( (__CPROVER_return_value == true) ==> *start <= max )
 {
     bool ret = false;
     size_t i;

@@ -34,23 +34,9 @@ void harness()
     size_t start, max;
     bool ret;
 
-    /* max is the buffer length which must be nonzero for non-API functions. */
-    __CPROVER_assume( max > 0 );
-
-    /* max is the buffer length which must not exceed unwindings. */
-    __CPROVER_assume( max < CBMC_MAX_BUFSIZE );
-
-    /* buf must not be NULL */
+    /* the line below will eventually be replaced by a freshness 
+    clause in the precondition function */
     buf = malloc( max );
-    __CPROVER_assume( buf != NULL );
 
     ret = skipUTF8( buf, &start, max );
-
-    __CPROVER_assert( isBool( ret ), "A bool value is returned." );
-
-    if( ret == true )
-    {
-        __CPROVER_assert( start <= max,
-                          "The buffer start index does not exceed the buffer length." );
-    }
 }

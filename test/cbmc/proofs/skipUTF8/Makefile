@@ -8,6 +8,9 @@ PROOF_UID=skipUTF8
 # without tripping unwinding assertions and without exhausting memory.
 CBMC_MAX_BUFSIZE=10
 
+CONTRACTS_FLAGS += --enforce-contract skipUTF8
+# CONTRACTS_FLAGS += --replace-call-with-contract skipUTF8MultiByte
+
 UNWINDSET += countHighBits.0:9
 UNWINDSET += skipUTF8.0:$(CBMC_MAX_BUFSIZE)
 UNWINDSET += skipUTF8MultiByte.0:$(CBMC_MAX_BUFSIZE)

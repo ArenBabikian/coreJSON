@@ -9,11 +9,11 @@ PROOF_UID=skipEscape
 CBMC_MAX_BUFSIZE=14
 
 CONTRACTS_FLAGS += --enforce-contract skipEscape
-CONTRACTS_FLAGS += --replace-call-with-contract skipOneHexEscape
+# CONTRACTS_FLAGS += --replace-call-with-contract skipOneHexEscape
 
 UNWINDSET += skipEscape.0:$(CBMC_MAX_BUFSIZE)
 UNWINDSET += skipHexEscape.0:$(CBMC_MAX_BUFSIZE)
-# UNWINDSET += skipOneHexEscape.0:$(CBMC_MAX_BUFSIZE)
+UNWINDSET += skipOneHexEscape.0:$(CBMC_MAX_BUFSIZE)
 
 include ../Makefile-json.common
 

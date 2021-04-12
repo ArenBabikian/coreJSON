@@ -8,7 +8,10 @@ PROOF_UID=skipSpaceAndComma
 # without tripping unwinding assertions and without exhausting memory.
 CBMC_MAX_BUFSIZE=10
 
-UNWINDSET += skipSpace.0:$(CBMC_MAX_BUFSIZE)
+CONTRACTS_FLAGS += --enforce-contract skipSpaceAndComma
+CONTRACTS_FLAGS += --replace-call-with-contract skipSpace
+
+# UNWINDSET += skipSpace.0:$(CBMC_MAX_BUFSIZE)
 UNWINDSET += skipSpaceAndComma.0:$(CBMC_MAX_BUFSIZE)
 
 include ../Makefile-json.common

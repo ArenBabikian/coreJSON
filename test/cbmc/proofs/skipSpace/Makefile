@@ -8,7 +8,10 @@ PROOF_UID=skipSpace
 # without tripping unwinding assertions and without exhausting memory.
 CBMC_MAX_BUFSIZE=10
 
-UNWINDSET += skipSpace.0:$(CBMC_MAX_BUFSIZE)
+CONTRACTS_FLAGS += --enforce-contract skipSpace
+CONTRACTS_FLAGS +=
+
+UNWINDSET += __CPROVER_contracts_original_skipSpace.0:$(CBMC_MAX_BUFSIZE)
 
 include ../Makefile-json.common
 

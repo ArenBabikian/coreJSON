@@ -9,11 +9,11 @@ PROOF_UID=skipAnyLiteral
 CBMC_MAX_BUFSIZE=6
 
 CONTRACTS_FLAGS += --enforce-contract skipAnyLiteral
-CONTRACTS_FLAGS += --replace-call-with-contract strnEq
+# CONTRACTS_FLAGS += --replace-call-with-contract strnEq
 
 UNWINDSET += skipAnyLiteral.0:$(CBMC_MAX_BUFSIZE)
 UNWINDSET += skipLiteral.0:$(CBMC_MAX_BUFSIZE)
-# UNWINDSET += strnEq.0:$(CBMC_MAX_BUFSIZE)
+UNWINDSET += strnEq.0:$(CBMC_MAX_BUFSIZE)
 
 include ../Makefile-json.common
 
