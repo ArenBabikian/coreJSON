@@ -61,17 +61,17 @@ typedef union
  * @param[in,out] start  The index at which to begin.
  * @param[in] max  The size of the buffer.
  */
-static void skipSpace( const char * buf,
+static bool skipSpace( const char * buf,
                        size_t * start,
                        size_t max )
 __CPROVER_requires( max > 0 && max < CBMC_MAX_BUFSIZE &&
                     buf != NULL && start != NULL )
 __CPROVER_ensures ( 
-    /*( __CPROVER_return_value == true ) ==> *start <= max*/
-    true
+    ( __CPROVER_return_value == true ) ==> *start <= max
 )
 {
     size_t i;
+    size_t saved_start = *start;
 
     assert( ( buf != NULL ) && ( start != NULL ) && ( max > 0U ) );
 
@@ -82,8 +82,12 @@ __CPROVER_ensures (
             break;
         }
     }
-
+    /*either start does not change value, or it is smaller than max*/
     *start = i;
+
+    /* did the *start pointer actually move forward at all? */
+    return ( *start != saved_start ) ? true : false;
+
 }
 
 /**
@@ -576,10 +580,13 @@ __CPROVER_ensures (
 
             if( buf[ i ] == '\\' )
             {
-                if( skipEscape( buf, &i, max ) != true )
+                size_t i_before = i;
+                if( skipEscape( buf, &i, i_before, max ) != true )
                 {
+                    assert (i >= i_before);
                     break;
                 }
+                assert (i >= i_before);
             }
             /* An unescaped control character is not allowed. */
             else if( iscntrl_( buf[ i ] ) )
@@ -1125,6 +1132,14 @@ static void skipScalars( const char * buf,
 static JSONStatus_t skipCollection( const char * buf,
                                     size_t * start,
                                     size_t max )
+__CPROVER_requires(max > 0 && max < CBMC_MAX_BUFSIZE && buf != NULL)
+__CPROVER_ensures(
+    (( __CPROVER_return_value == JSONPartial ) ||
+    ( __CPROVER_return_value == JSONIllegalDocument ) ||
+    ( __CPROVER_return_value == JSONMaxDepthExceeded ) ||
+    ( __CPROVER_return_value == JSONSuccess )) &&
+    ((__CPROVER_return_value == JSONSuccess) ==> *start <= max)
+)
 {
     JSONStatus_t ret = JSONPartial;
     char c, stack[ JSON_MAX_DEPTH ];

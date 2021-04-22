@@ -8,10 +8,18 @@ PROOF_UID=skipString
 # without tripping unwinding assertions and without exhausting memory.
 CBMC_MAX_BUFSIZE=14
 
-UNWINDSET += skipString.0:$(CBMC_MAX_BUFSIZE)
+# time is reduced from ~10 seconds to 2-3 seconds
+CONTRACTS_FLAGS += --enforce-contract skipString
+CONTRACTS_FLAGS += --replace-call-with-contract skipEscape
+# CONTRACTS_FLAGS += --replace-call-with-contract skipUTF8
+
+UNWINDSET += __CPROVER_contracts_original_skipString.0:$(CBMC_MAX_BUFSIZE)
+# UNWINDSET += skipString.0:$(CBMC_MAX_BUFSIZE)
+# UNWINDSET += skipEscape.0:$(CBMC_MAX_BUFSIZE)
+# UNWINDSET += skipUTF8.0:$(CBMC_MAX_BUFSIZE)
 
 PROOF_SOURCES += $(PROOF_STUB)/skipGeneric.c
-PROOF_SOURCES += $(PROOF_STUB)/skipEscape.c
+# PROOF_SOURCES += $(PROOF_STUB)/skipEscape.c
 PROOF_SOURCES += $(PROOF_STUB)/skipUTF8.c
 
 include ../Makefile-json.common
