@@ -21,8 +21,8 @@
  */
 
 /**
- * @file skipUTF8_harness.c
- * @brief Implements the proof harness for the skipUTF8 function.
+ * @file skipNumber_harness.c
+ * @brief Implements the proof harness for the skipNumber function.
  */
 
 #include <stdlib.h>
@@ -33,10 +33,24 @@ void harness()
     char * buf;
     size_t start, max;
     bool ret;
+    int32_t * outValue;
 
     /* the line below will eventually be replaced by a freshness 
     clause in the precondition function */
     buf = malloc( max );
+    
+    /* outValue may be NULL */
+    outValue = malloc( sizeof( *outValue ) );
 
-    ret = skipUTF8( buf, &start, max );
+    ret = skipDigits( buf, &start, max, outValue );
+    /*
+    __CPROVER_assert( isBool( ret ), "A bool value is returned." );
+
+    if( ( ret == true ) && ( outValue != NULL ) )
+    {
+        __CPROVER_assert( ( ( *outValue == -1 ) || ( ( *outValue >= 0 ) && ( *outValue <= MAX_INDEX_VALUE ) ) ),
+                          "The converted integer is within the permitted range or is -1." );
+    }
+    */
+
 }

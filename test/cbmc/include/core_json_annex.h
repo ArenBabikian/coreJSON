@@ -102,6 +102,19 @@ bool skipAnyScalar( const char * buf,
                     size_t * start,
                     size_t max );
 
+void skipArrayScalars( const char * buf,
+                       size_t * start,
+                       size_t max );
+
+void skipObjectScalars( const char * buf,
+                       size_t * start,
+                       size_t max );
+
+static bool skipDigits( const char * buf,
+                        size_t * start,
+                        size_t max,
+                        int32_t * outValue );
+
 JSONStatus_t skipCollection( const char * buf,
                              size_t * start,
                              size_t max );

@@ -8,22 +8,30 @@ PROOF_UID=skipCollection
 # without tripping unwinding assertions and without exhausting memory.
 CBMC_MAX_BUFSIZE=8
 
+CHECK_FUNCTION_CONTRACTS += skipCollection
+USE_FUNCTION_CONTRACTS += skipArrayScalars
+USE_FUNCTION_CONTRACTS += skipObjectScalars
+USE_FUNCTION_CONTRACTS += skipSpace
+USE_FUNCTION_CONTRACTS += skipSpaceAndComma
+
 DEFINES += -DJSON_MAX_DEPTH="( $(CBMC_MAX_BUFSIZE) - 2 )"
 
-REMOVE_FUNCTION_BODY += strnEq
-UNWINDSET += skipCollection.0:$(CBMC_MAX_BUFSIZE)
-UNWINDSET += skipArrayScalars.0:$(CBMC_MAX_BUFSIZE)
-UNWINDSET += skipObjectScalars.0:$(CBMC_MAX_BUFSIZE)
+# REMOVE_FUNCTION_BODY += strnEq
+# UNWINDSET += skipCollection.0:$(CBMC_MAX_BUFSIZE)
+UNWINDSET += __CPROVER_contracts_original_skipCollection.0:$(CBMC_MAX_BUFSIZE)
+# UNWINDSET += skipArrayScalars.0:$(CBMC_MAX_BUFSIZE)
+# UNWINDSET += skipObjectScalars.0:$(CBMC_MAX_BUFSIZE)
 
-PROOF_SOURCES += $(PROOF_STUB)/skipGeneric.c
-PROOF_SOURCES += $(PROOF_STUB)/skipAnyLiteral.c
-PROOF_SOURCES += $(PROOF_STUB)/skipNumber.c
-PROOF_SOURCES += $(PROOF_STUB)/skipSpace.c
-PROOF_SOURCES += $(PROOF_STUB)/skipSpaceAndComma.c
-PROOF_SOURCES += $(PROOF_STUB)/skipString.c
+# PROOF_SOURCES += $(PROOF_STUB)/skipGeneric.c
+# PROOF_SOURCES += $(PROOF_STUB)/skipAnyLiteral.c
+# PROOF_SOURCES += $(PROOF_STUB)/skipNumber.c
+# PROOF_SOURCES += $(PROOF_STUB)/skipSpace.c
+# PROOF_SOURCES += $(PROOF_STUB)/skipSpaceAndComma.c
+# PROOF_SOURCES += $(PROOF_STUB)/skipString.c
 
 include ../Makefile-json.common
 
 # Substitution command to pass to sed for patching core_json.c. The
 # characters " and # must be escaped with backslash.
-CORE_JSON_SED_EXPR = 1s/^/\#include \"core_json_annex.h\" /; s/^static //; s/(bool|void) skip(AnyLiteral|Number|Space|SpaceAndComma|String)\b/&_/
+CORE_JSON_SED_EXPR = s/^static //
+# CORE_JSON_SED_EXPR = 1s/^/\#include \"core_json_annex.h\" /; s/^static //; s/(bool|void) skip(AnyLiteral|Number|Space|SpaceAndComma|String)\b/&_/

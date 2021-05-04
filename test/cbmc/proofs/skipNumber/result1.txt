@@ -1,0 +1,1781 @@
+CBMC version 5.28.0 (cbmc-5.28.1-16-g82f7e5d94-dirty) 64-bit x86_64 linux
+Reading GOTO program from file
+Reading: /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/gotos/skipNumber_harness.goto
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (user-specified)
+Starting Bounded Model Checking
+Runtime Symex: 0.117147s
+size of program expression: 547 steps
+simple slicing removed 19 assignments
+Generated 182 VCC(s), 134 remaining after simplification
+Runtime Postprocess Equation: 8.8779e-05s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 0.0671481s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 0.0152395s
+Solving with MiniSAT 2.2.1 with simplifier
+10653 variables, 36963 clauses
+SAT checker: instance is SATISFIABLE
+Runtime Solver: 0.206512s
+Runtime decision procedure: 0.275577s
+Building error trace
+Running propositional reduction
+Solving with MiniSAT 2.2.1 with simplifier
+10653 variables, 22732 clauses
+SAT checker: instance is SATISFIABLE
+Runtime Solver: 0.0211796s
+Runtime decision procedure: 0.0218701s
+Building error trace
+Running propositional reduction
+Solving with MiniSAT 2.2.1 with simplifier
+10653 variables, 22732 clauses
+SAT checker: instance is SATISFIABLE
+Runtime Solver: 0.0117576s
+Runtime decision procedure: 0.0124314s
+Building error trace
+Running propositional reduction
+Solving with MiniSAT 2.2.1 with simplifier
+10653 variables, 22725 clauses
+SAT checker: instance is SATISFIABLE
+Runtime Solver: 0.00736899s
+Runtime decision procedure: 0.00801979s
+Building error trace
+Running propositional reduction
+Solving with MiniSAT 2.2.1 with simplifier
+10653 variables, 22725 clauses
+SAT checker: instance is SATISFIABLE
+Runtime Solver: 0.00458149s
+Runtime decision procedure: 0.00522507s
+Building error trace
+Running propositional reduction
+Solving with MiniSAT 2.2.1 with simplifier
+10653 variables, 22725 clauses
+SAT checker: instance is SATISFIABLE
+Runtime Solver: 0.0052775s
+Runtime decision procedure: 0.00591973s
+Building error trace
+Running propositional reduction
+Solving with MiniSAT 2.2.1 with simplifier
+10653 variables, 22725 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime Solver: 0.104577s
+Runtime decision procedure: 0.104843s
+
+** Results:
+[1] assertion: SUCCESS
+[2] assertion: SUCCESS
+[3] assertion: SUCCESS
+[4] assertion: SUCCESS
+[pointer_dereference.1] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: deallocated dynamic object in *(&(*(&i))): SUCCESS
+[pointer_dereference.2] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: dead object in *(&(*(&i))): SUCCESS
+[pointer_dereference.3] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: pointer NULL in *(&(*((int32_t *)(void *)0))): FAILURE
+[pointer_dereference.4] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: deallocated dynamic object in *(&(*((int32_t *)(void *)0))): FAILURE
+[pointer_dereference.5] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: dead object in *(&(*((int32_t *)(void *)0))): FAILURE
+[pointer_dereference.6] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: pointer outside object bounds in *(&(*((int32_t *)(void *)0))): FAILURE
+[pointer_dereference.11] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: deallocated dynamic object in *(&(*(&i))): SUCCESS
+[pointer_dereference.12] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: dead object in *(&(*(&i))): SUCCESS
+[pointer_dereference.13] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: pointer NULL in *(&(*((int32_t *)(void *)0))): FAILURE
+[pointer_dereference.14] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: deallocated dynamic object in *(&(*((int32_t *)(void *)0))): FAILURE
+[pointer_dereference.15] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: dead object in *(&(*((int32_t *)(void *)0))): FAILURE
+[pointer_dereference.16] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: pointer outside object bounds in *(&(*((int32_t *)(void *)0))): FAILURE
+[pointer_dereference.21] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: deallocated dynamic object in *(&(*(&i))): SUCCESS
+[pointer_dereference.22] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: dead object in *(&(*(&i))): SUCCESS
+[pointer_dereference.23] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: pointer NULL in *(&(*((int32_t *)(void *)0))): FAILURE
+[pointer_dereference.24] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: deallocated dynamic object in *(&(*((int32_t *)(void *)0))): FAILURE
+[pointer_dereference.25] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: dead object in *(&(*((int32_t *)(void *)0))): FAILURE
+[pointer_dereference.26] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 762 dereference failure: pointer outside object bounds in *(&(*((int32_t *)(void *)0))): FAILURE
+[pointer_dereference.7] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 768 dereference failure: dead object in *(&i): SUCCESS
+[pointer_dereference.17] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 768 dereference failure: dead object in *(&i): SUCCESS
+[pointer_dereference.27] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 768 dereference failure: dead object in *(&i): SUCCESS
+[pointer_dereference.8] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 791 dereference failure: dead object in *(&i): SUCCESS
+[pointer_dereference.18] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 791 dereference failure: dead object in *(&i): SUCCESS
+[pointer_dereference.28] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 791 dereference failure: dead object in *(&i): SUCCESS
+[pointer_dereference.9] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 800 dereference failure: pointer NULL in *((int32_t *)(void *)0): SUCCESS
+[pointer_dereference.19] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 800 dereference failure: pointer NULL in *((int32_t *)(void *)0): SUCCESS
+[pointer_dereference.29] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 800 dereference failure: pointer NULL in *((int32_t *)(void *)0): SUCCESS
+[pointer_dereference.10] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 803 dereference failure: pointer NULL in *((int32_t *)(void *)0): SUCCESS
+[pointer_dereference.20] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 803 dereference failure: pointer NULL in *((int32_t *)(void *)0): SUCCESS
+[pointer_dereference.30] file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c line 803 dereference failure: pointer NULL in *((int32_t *)(void *)0): SUCCESS
+/local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals
+[skipDecimals.assertion.1] line 870 assertion ( buf != NULL ) && ( start != NULL ) && ( max > 0U ): SUCCESS
+[skipDecimals.pointer_dereference.1] line 872 dereference failure: pointer NULL in *start: SUCCESS
+[skipDecimals.pointer_dereference.2] line 872 dereference failure: pointer invalid in *start: SUCCESS
+[skipDecimals.pointer_dereference.3] line 872 dereference failure: deallocated dynamic object in *start: SUCCESS
+[skipDecimals.pointer_dereference.4] line 872 dereference failure: dead object in *start: SUCCESS
+[skipDecimals.pointer_dereference.5] line 872 dereference failure: pointer outside dynamic object bounds in *start: SUCCESS
+[skipDecimals.pointer_dereference.6] line 872 dereference failure: pointer outside object bounds in *start: SUCCESS
+[skipDecimals.pointer_dereference.7] line 872 dereference failure: invalid integer address in *start: SUCCESS
+[skipDecimals.overflow.1] line 874 arithmetic overflow on unsigned to signed type conversion in (signed long int)i: SUCCESS
+[skipDecimals.pointer_arithmetic.1] line 874 pointer arithmetic: pointer NULL in buf + (signed long int)i: SUCCESS
+[skipDecimals.pointer_arithmetic.2] line 874 pointer arithmetic: pointer invalid in buf + (signed long int)i: SUCCESS
+[skipDecimals.pointer_arithmetic.3] line 874 pointer arithmetic: deallocated dynamic object in buf + (signed long int)i: SUCCESS
+[skipDecimals.pointer_arithmetic.4] line 874 pointer arithmetic: dead object in buf + (signed long int)i: SUCCESS
+[skipDecimals.pointer_arithmetic.5] line 874 pointer arithmetic: pointer outside dynamic object bounds in buf + (signed long int)i: SUCCESS
+[skipDecimals.pointer_arithmetic.6] line 874 pointer arithmetic: pointer outside object bounds in buf + (signed long int)i: SUCCESS
+[skipDecimals.pointer_arithmetic.7] line 874 pointer arithmetic: invalid integer address in buf + (signed long int)i: SUCCESS
+[skipDecimals.pointer_dereference.8] line 874 dereference failure: pointer NULL in buf[(signed long int)i]: SUCCESS
+[skipDecimals.pointer_dereference.9] line 874 dereference failure: pointer invalid in buf[(signed long int)i]: SUCCESS
+[skipDecimals.pointer_dereference.10] line 874 dereference failure: deallocated dynamic object in buf[(signed long int)i]: SUCCESS
+[skipDecimals.pointer_dereference.11] line 874 dereference failure: dead object in buf[(signed long int)i]: SUCCESS
+[skipDecimals.pointer_dereference.12] line 874 dereference failure: pointer outside dynamic object bounds in buf[(signed long int)i]: SUCCESS
+[skipDecimals.pointer_dereference.13] line 874 dereference failure: pointer outside object bounds in buf[(signed long int)i]: SUCCESS
+[skipDecimals.pointer_dereference.14] line 874 dereference failure: invalid integer address in buf[(signed long int)i]: SUCCESS
+[skipDecimals.overflow.2] line 876 arithmetic overflow on unsigned + in i + 1ul: SUCCESS
+[skipDecimals.pointer_dereference.15] line 880 dereference failure: pointer NULL in *start: SUCCESS
+[skipDecimals.pointer_dereference.16] line 880 dereference failure: pointer invalid in *start: SUCCESS
+[skipDecimals.pointer_dereference.17] line 880 dereference failure: deallocated dynamic object in *start: SUCCESS
+[skipDecimals.pointer_dereference.18] line 880 dereference failure: dead object in *start: SUCCESS
+[skipDecimals.pointer_dereference.19] line 880 dereference failure: pointer outside dynamic object bounds in *start: SUCCESS
+[skipDecimals.pointer_dereference.20] line 880 dereference failure: pointer outside object bounds in *start: SUCCESS
+[skipDecimals.pointer_dereference.21] line 880 dereference failure: invalid integer address in *start: SUCCESS
+
+/local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent
+[skipExponent.assertion.1] line 899 assertion ( buf != NULL ) && ( start != NULL ) && ( max > 0U ): SUCCESS
+[skipExponent.pointer_dereference.1] line 901 dereference failure: pointer NULL in *start: SUCCESS
+[skipExponent.pointer_dereference.2] line 901 dereference failure: pointer invalid in *start: SUCCESS
+[skipExponent.pointer_dereference.3] line 901 dereference failure: deallocated dynamic object in *start: SUCCESS
+[skipExponent.pointer_dereference.4] line 901 dereference failure: dead object in *start: SUCCESS
+[skipExponent.pointer_dereference.5] line 901 dereference failure: pointer outside dynamic object bounds in *start: SUCCESS
+[skipExponent.pointer_dereference.6] line 901 dereference failure: pointer outside object bounds in *start: SUCCESS
+[skipExponent.pointer_dereference.7] line 901 dereference failure: invalid integer address in *start: SUCCESS
+[skipExponent.overflow.1] line 903 arithmetic overflow on unsigned to signed type conversion in (signed long int)i: SUCCESS
+[skipExponent.overflow.2] line 903 arithmetic overflow on unsigned to signed type conversion in (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.1] line 903 pointer arithmetic: pointer NULL in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.2] line 903 pointer arithmetic: pointer invalid in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.3] line 903 pointer arithmetic: deallocated dynamic object in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.4] line 903 pointer arithmetic: dead object in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.5] line 903 pointer arithmetic: pointer outside dynamic object bounds in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.6] line 903 pointer arithmetic: pointer outside object bounds in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.7] line 903 pointer arithmetic: invalid integer address in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.8] line 903 pointer arithmetic: pointer NULL in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.9] line 903 pointer arithmetic: pointer invalid in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.10] line 903 pointer arithmetic: deallocated dynamic object in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.11] line 903 pointer arithmetic: dead object in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.12] line 903 pointer arithmetic: pointer outside dynamic object bounds in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.13] line 903 pointer arithmetic: pointer outside object bounds in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.14] line 903 pointer arithmetic: invalid integer address in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_dereference.8] line 903 dereference failure: pointer NULL in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.9] line 903 dereference failure: pointer invalid in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.10] line 903 dereference failure: deallocated dynamic object in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.11] line 903 dereference failure: dead object in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.12] line 903 dereference failure: pointer outside dynamic object bounds in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.13] line 903 dereference failure: pointer outside object bounds in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.14] line 903 dereference failure: invalid integer address in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.15] line 903 dereference failure: pointer NULL in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.16] line 903 dereference failure: pointer invalid in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.17] line 903 dereference failure: deallocated dynamic object in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.18] line 903 dereference failure: dead object in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.19] line 903 dereference failure: pointer outside dynamic object bounds in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.20] line 903 dereference failure: pointer outside object bounds in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.21] line 903 dereference failure: invalid integer address in buf[(signed long int)i]: SUCCESS
+[skipExponent.overflow.3] line 905 arithmetic overflow on unsigned + in i + 1ul: SUCCESS
+[skipExponent.overflow.4] line 907 arithmetic overflow on unsigned to signed type conversion in (signed long int)i: SUCCESS
+[skipExponent.overflow.5] line 907 arithmetic overflow on unsigned to signed type conversion in (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.15] line 907 pointer arithmetic: pointer NULL in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.16] line 907 pointer arithmetic: pointer invalid in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.17] line 907 pointer arithmetic: deallocated dynamic object in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.18] line 907 pointer arithmetic: dead object in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.19] line 907 pointer arithmetic: pointer outside dynamic object bounds in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.20] line 907 pointer arithmetic: pointer outside object bounds in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.21] line 907 pointer arithmetic: invalid integer address in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.22] line 907 pointer arithmetic: pointer NULL in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.23] line 907 pointer arithmetic: pointer invalid in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.24] line 907 pointer arithmetic: deallocated dynamic object in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.25] line 907 pointer arithmetic: dead object in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.26] line 907 pointer arithmetic: pointer outside dynamic object bounds in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.27] line 907 pointer arithmetic: pointer outside object bounds in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_arithmetic.28] line 907 pointer arithmetic: invalid integer address in buf + (signed long int)i: SUCCESS
+[skipExponent.pointer_dereference.22] line 907 dereference failure: pointer NULL in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.23] line 907 dereference failure: pointer invalid in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.24] line 907 dereference failure: deallocated dynamic object in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.25] line 907 dereference failure: dead object in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.26] line 907 dereference failure: pointer outside dynamic object bounds in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.27] line 907 dereference failure: pointer outside object bounds in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.28] line 907 dereference failure: invalid integer address in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.29] line 907 dereference failure: pointer NULL in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.30] line 907 dereference failure: pointer invalid in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.31] line 907 dereference failure: deallocated dynamic object in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.32] line 907 dereference failure: dead object in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.33] line 907 dereference failure: pointer outside dynamic object bounds in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.34] line 907 dereference failure: pointer outside object bounds in buf[(signed long int)i]: SUCCESS
+[skipExponent.pointer_dereference.35] line 907 dereference failure: invalid integer address in buf[(signed long int)i]: SUCCESS
+[skipExponent.overflow.6] line 909 arithmetic overflow on unsigned + in i + 1ul: SUCCESS
+[skipExponent.pointer_dereference.36] line 914 dereference failure: pointer NULL in *start: SUCCESS
+[skipExponent.pointer_dereference.37] line 914 dereference failure: pointer invalid in *start: SUCCESS
+[skipExponent.pointer_dereference.38] line 914 dereference failure: deallocated dynamic object in *start: SUCCESS
+[skipExponent.pointer_dereference.39] line 914 dereference failure: dead object in *start: SUCCESS
+[skipExponent.pointer_dereference.40] line 914 dereference failure: pointer outside dynamic object bounds in *start: SUCCESS
+[skipExponent.pointer_dereference.41] line 914 dereference failure: pointer outside object bounds in *start: SUCCESS
+[skipExponent.pointer_dereference.42] line 914 dereference failure: invalid integer address in *start: SUCCESS
+
+/local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber
+[skipNumber.assertion.1] line 942 assertion ( buf != NULL ) && ( start != NULL ) && ( max > 0U ): SUCCESS
+[skipNumber.pointer_dereference.1] line 944 dereference failure: pointer NULL in *start: SUCCESS
+[skipNumber.pointer_dereference.2] line 944 dereference failure: pointer invalid in *start: SUCCESS
+[skipNumber.pointer_dereference.3] line 944 dereference failure: deallocated dynamic object in *start: SUCCESS
+[skipNumber.pointer_dereference.4] line 944 dereference failure: dead object in *start: SUCCESS
+[skipNumber.pointer_dereference.5] line 944 dereference failure: pointer outside dynamic object bounds in *start: SUCCESS
+[skipNumber.pointer_dereference.6] line 944 dereference failure: pointer outside object bounds in *start: SUCCESS
+[skipNumber.pointer_dereference.7] line 944 dereference failure: invalid integer address in *start: SUCCESS
+[skipNumber.overflow.1] line 946 arithmetic overflow on unsigned to signed type conversion in (signed long int)i: SUCCESS
+[skipNumber.pointer_arithmetic.1] line 946 pointer arithmetic: pointer NULL in buf + (signed long int)i: SUCCESS
+[skipNumber.pointer_arithmetic.2] line 946 pointer arithmetic: pointer invalid in buf + (signed long int)i: SUCCESS
+[skipNumber.pointer_arithmetic.3] line 946 pointer arithmetic: deallocated dynamic object in buf + (signed long int)i: SUCCESS
+[skipNumber.pointer_arithmetic.4] line 946 pointer arithmetic: dead object in buf + (signed long int)i: SUCCESS
+[skipNumber.pointer_arithmetic.5] line 946 pointer arithmetic: pointer outside dynamic object bounds in buf + (signed long int)i: SUCCESS
+[skipNumber.pointer_arithmetic.6] line 946 pointer arithmetic: pointer outside object bounds in buf + (signed long int)i: SUCCESS
+[skipNumber.pointer_arithmetic.7] line 946 pointer arithmetic: invalid integer address in buf + (signed long int)i: SUCCESS
+[skipNumber.pointer_dereference.8] line 946 dereference failure: pointer NULL in buf[(signed long int)i]: SUCCESS
+[skipNumber.pointer_dereference.9] line 946 dereference failure: pointer invalid in buf[(signed long int)i]: SUCCESS
+[skipNumber.pointer_dereference.10] line 946 dereference failure: deallocated dynamic object in buf[(signed long int)i]: SUCCESS
+[skipNumber.pointer_dereference.11] line 946 dereference failure: dead object in buf[(signed long int)i]: SUCCESS
+[skipNumber.pointer_dereference.12] line 946 dereference failure: pointer outside dynamic object bounds in buf[(signed long int)i]: SUCCESS
+[skipNumber.pointer_dereference.13] line 946 dereference failure: pointer outside object bounds in buf[(signed long int)i]: SUCCESS
+[skipNumber.pointer_dereference.14] line 946 dereference failure: invalid integer address in buf[(signed long int)i]: SUCCESS
+[skipNumber.overflow.2] line 948 arithmetic overflow on unsigned + in i + 1ul: SUCCESS
+[skipNumber.overflow.3] line 960 arithmetic overflow on unsigned to signed type conversion in (signed long int)i: SUCCESS
+[skipNumber.pointer_arithmetic.8] line 960 pointer arithmetic: pointer NULL in buf + (signed long int)i: SUCCESS
+[skipNumber.pointer_arithmetic.9] line 960 pointer arithmetic: pointer invalid in buf + (signed long int)i: SUCCESS
+[skipNumber.pointer_arithmetic.10] line 960 pointer arithmetic: deallocated dynamic object in buf + (signed long int)i: SUCCESS
+[skipNumber.pointer_arithmetic.11] line 960 pointer arithmetic: dead object in buf + (signed long int)i: SUCCESS
+[skipNumber.pointer_arithmetic.12] line 960 pointer arithmetic: pointer outside dynamic object bounds in buf + (signed long int)i: SUCCESS
+[skipNumber.pointer_arithmetic.13] line 960 pointer arithmetic: pointer outside object bounds in buf + (signed long int)i: SUCCESS
+[skipNumber.pointer_arithmetic.14] line 960 pointer arithmetic: invalid integer address in buf + (signed long int)i: SUCCESS
+[skipNumber.pointer_dereference.15] line 960 dereference failure: pointer NULL in buf[(signed long int)i]: SUCCESS
+[skipNumber.pointer_dereference.16] line 960 dereference failure: pointer invalid in buf[(signed long int)i]: SUCCESS
+[skipNumber.pointer_dereference.17] line 960 dereference failure: deallocated dynamic object in buf[(signed long int)i]: SUCCESS
+[skipNumber.pointer_dereference.18] line 960 dereference failure: dead object in buf[(signed long int)i]: SUCCESS
+[skipNumber.pointer_dereference.19] line 960 dereference failure: pointer outside dynamic object bounds in buf[(signed long int)i]: SUCCESS
+[skipNumber.pointer_dereference.20] line 960 dereference failure: pointer outside object bounds in buf[(signed long int)i]: SUCCESS
+[skipNumber.pointer_dereference.21] line 960 dereference failure: invalid integer address in buf[(signed long int)i]: SUCCESS
+[skipNumber.overflow.4] line 963 arithmetic overflow on unsigned + in i + 1ul: SUCCESS
+[skipNumber.pointer_dereference.22] line 975 dereference failure: pointer NULL in *start: SUCCESS
+[skipNumber.pointer_dereference.23] line 975 dereference failure: pointer invalid in *start: SUCCESS
+[skipNumber.pointer_dereference.24] line 975 dereference failure: deallocated dynamic object in *start: SUCCESS
+[skipNumber.pointer_dereference.25] line 975 dereference failure: dead object in *start: SUCCESS
+[skipNumber.pointer_dereference.26] line 975 dereference failure: pointer outside dynamic object bounds in *start: SUCCESS
+[skipNumber.pointer_dereference.27] line 975 dereference failure: pointer outside object bounds in *start: SUCCESS
+[skipNumber.pointer_dereference.28] line 975 dereference failure: invalid integer address in *start: SUCCESS
+
+<builtin-library-malloc> function malloc
+[malloc.assertion.1] line 26 max allocation size exceeded: SUCCESS
+[malloc.assertion.2] line 31 max allocation may fail: SUCCESS
+
+Trace for pointer_dereference.3:
+
+State 26 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 33 thread 0
+----------------------------------------------------
+  buf=((char *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 27 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  start=4ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000100)
+
+State 28 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 29 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 35 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 30 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 36 thread 0
+----------------------------------------------------
+  outValue=((signed int *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 34 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  malloc_size=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 64 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 67 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 68 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 69 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Assumption:
+  tmp_cc$2 > (unsigned long int)0 && tmp_cc$2 < (unsigned long int)12 && tmp_cc$0 != ((const char *)NULL)
+
+State 80 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 81 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 82 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 83 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 84 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 85 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 940 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 87 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 944 thread 0
+----------------------------------------------------
+  i=4ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000100)
+
+State 106 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 948 thread 0
+----------------------------------------------------
+  i=5ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000101)
+
+State 124 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 962 thread 0
+----------------------------------------------------
+  ret=TRUE (00000001)
+
+State 126 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 963 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 131 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 132 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  start=&i!0@1 (00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 133 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 134 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 868 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 136 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 872 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 154 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 883 thread 0
+----------------------------------------------------
+  __CPROVER_dead_object=(const void *)&i!0@1 (00000101 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 158 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 974 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 159 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 974 thread 0
+----------------------------------------------------
+  start=&i!0@1 (00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 160 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 974 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 161 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 897 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 164 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 901 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 201 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 905 thread 0
+----------------------------------------------------
+  i=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 206 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 758 thread 0
+----------------------------------------------------
+  i=9223372036854775815ul (10000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 762 thread 0
+  dereference failure: pointer NULL in *(&(*((int32_t *)(void *)0)))
+  FALSE
+
+
+
+Trace for pointer_dereference.4:
+
+State 26 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 33 thread 0
+----------------------------------------------------
+  buf=((char *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 27 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  start=4ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000100)
+
+State 28 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 29 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 35 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 30 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 36 thread 0
+----------------------------------------------------
+  outValue=((signed int *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 34 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  malloc_size=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 64 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 67 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 68 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 69 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Assumption:
+  tmp_cc$2 > (unsigned long int)0 && tmp_cc$2 < (unsigned long int)12 && tmp_cc$0 != ((const char *)NULL)
+
+State 80 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 81 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 82 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 83 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 84 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 85 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 940 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 87 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 944 thread 0
+----------------------------------------------------
+  i=4ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000100)
+
+State 106 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 948 thread 0
+----------------------------------------------------
+  i=5ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000101)
+
+State 124 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 962 thread 0
+----------------------------------------------------
+  ret=TRUE (00000001)
+
+State 126 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 963 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 131 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 132 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  start=&i!0@1 (00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 133 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 134 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 868 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 136 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 872 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 154 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 883 thread 0
+----------------------------------------------------
+  __CPROVER_dead_object=(const void *)&i!0@1 (00000101 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 158 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 974 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 159 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 974 thread 0
+----------------------------------------------------
+  start=&i!0@1 (00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 160 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 974 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 161 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 897 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 164 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 901 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 201 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 905 thread 0
+----------------------------------------------------
+  i=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 206 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 758 thread 0
+----------------------------------------------------
+  i=9223372036854775815ul (10000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 762 thread 0
+  dereference failure: pointer NULL in *(&(*((int32_t *)(void *)0)))
+  FALSE
+
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 762 thread 0
+  dereference failure: deallocated dynamic object in *(&(*((int32_t *)(void *)0)))
+  !(POINTER_OBJECT(((int32_t *)NULL)) == POINTER_OBJECT(__CPROVER_deallocated))
+
+
+
+Trace for pointer_dereference.5:
+
+State 26 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 33 thread 0
+----------------------------------------------------
+  buf=((char *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 27 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  start=4ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000100)
+
+State 28 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 29 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 35 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 30 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 36 thread 0
+----------------------------------------------------
+  outValue=((signed int *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 34 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  malloc_size=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 64 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 67 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 68 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 69 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Assumption:
+  tmp_cc$2 > (unsigned long int)0 && tmp_cc$2 < (unsigned long int)12 && tmp_cc$0 != ((const char *)NULL)
+
+State 80 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 81 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 82 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 83 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 84 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 85 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 940 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 87 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 944 thread 0
+----------------------------------------------------
+  i=4ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000100)
+
+State 106 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 948 thread 0
+----------------------------------------------------
+  i=5ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000101)
+
+State 124 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 962 thread 0
+----------------------------------------------------
+  ret=TRUE (00000001)
+
+State 126 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 963 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 131 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 132 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  start=&i!0@1 (00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 133 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 134 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 868 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 136 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 872 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 154 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 883 thread 0
+----------------------------------------------------
+  __CPROVER_dead_object=NULL (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 158 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 974 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 159 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 974 thread 0
+----------------------------------------------------
+  start=&i!0@1 (00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 160 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 974 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 161 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 897 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 164 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 901 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 201 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 905 thread 0
+----------------------------------------------------
+  i=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 206 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 758 thread 0
+----------------------------------------------------
+  i=9223372036854775815ul (10000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 762 thread 0
+  dereference failure: pointer NULL in *(&(*((int32_t *)(void *)0)))
+  FALSE
+
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 762 thread 0
+  dereference failure: deallocated dynamic object in *(&(*((int32_t *)(void *)0)))
+  !(POINTER_OBJECT(((int32_t *)NULL)) == POINTER_OBJECT(__CPROVER_deallocated))
+
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 762 thread 0
+  dereference failure: dead object in *(&(*((int32_t *)(void *)0)))
+  !(POINTER_OBJECT(((int32_t *)NULL)) == POINTER_OBJECT(__CPROVER_dead_object))
+
+
+
+Trace for pointer_dereference.6:
+
+State 26 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 33 thread 0
+----------------------------------------------------
+  buf=((char *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 27 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  start=4ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000100)
+
+State 28 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 29 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 35 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 30 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 36 thread 0
+----------------------------------------------------
+  outValue=((signed int *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 34 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  malloc_size=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 64 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 67 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 68 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 69 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Assumption:
+  tmp_cc$2 > (unsigned long int)0 && tmp_cc$2 < (unsigned long int)12 && tmp_cc$0 != ((const char *)NULL)
+
+State 80 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 81 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 82 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 83 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 84 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 85 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 940 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 87 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 944 thread 0
+----------------------------------------------------
+  i=4ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000100)
+
+State 106 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 948 thread 0
+----------------------------------------------------
+  i=5ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000101)
+
+State 124 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 962 thread 0
+----------------------------------------------------
+  ret=TRUE (00000001)
+
+State 126 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 963 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 131 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 132 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  start=&i!0@1 (00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 133 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 134 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 868 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 136 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 872 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 154 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 883 thread 0
+----------------------------------------------------
+  __CPROVER_dead_object=(const void *)&i!0@1 (00000101 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 158 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 974 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 159 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 974 thread 0
+----------------------------------------------------
+  start=&i!0@1 (00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 160 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 974 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 161 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 897 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 164 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 901 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 201 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 905 thread 0
+----------------------------------------------------
+  i=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 206 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 758 thread 0
+----------------------------------------------------
+  i=9223372036854775815ul (10000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 762 thread 0
+  dereference failure: pointer NULL in *(&(*((int32_t *)(void *)0)))
+  FALSE
+
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 762 thread 0
+  dereference failure: deallocated dynamic object in *(&(*((int32_t *)(void *)0)))
+  !(POINTER_OBJECT(((int32_t *)NULL)) == POINTER_OBJECT(__CPROVER_deallocated))
+
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipExponent line 762 thread 0
+  dereference failure: pointer outside object bounds in *(&(*((int32_t *)(void *)0)))
+  OBJECT_SIZE(((int32_t *)NULL)) >= 4ul
+
+
+
+Trace for pointer_dereference.13:
+
+State 26 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 33 thread 0
+----------------------------------------------------
+  buf=((char *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 27 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  start=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 28 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  max=8ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00001000)
+
+State 29 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 35 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 30 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 36 thread 0
+----------------------------------------------------
+  outValue=((signed int *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 34 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  malloc_size=8ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00001000)
+
+State 64 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 67 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 68 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 69 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  max=8ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00001000)
+
+Assumption:
+  tmp_cc$2 > (unsigned long int)0 && tmp_cc$2 < (unsigned long int)12 && tmp_cc$0 != ((const char *)NULL)
+
+State 80 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 81 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 82 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  max=8ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00001000)
+
+State 83 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 84 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 85 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 940 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 87 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 944 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 106 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 948 thread 0
+----------------------------------------------------
+  i=1ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001)
+
+State 125 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 758 thread 0
+----------------------------------------------------
+  i=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 762 thread 0
+  dereference failure: pointer NULL in *(&(*((int32_t *)(void *)0)))
+  FALSE
+
+
+
+Trace for pointer_dereference.14:
+
+State 26 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 33 thread 0
+----------------------------------------------------
+  buf=((char *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 27 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  start=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 28 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  max=8ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00001000)
+
+State 29 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 35 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 30 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 36 thread 0
+----------------------------------------------------
+  outValue=((signed int *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 34 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  malloc_size=8ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00001000)
+
+State 64 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 67 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 68 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 69 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  max=8ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00001000)
+
+Assumption:
+  tmp_cc$2 > (unsigned long int)0 && tmp_cc$2 < (unsigned long int)12 && tmp_cc$0 != ((const char *)NULL)
+
+State 80 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 81 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 82 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  max=8ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00001000)
+
+State 83 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 84 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 85 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 940 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 87 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 944 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 106 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 948 thread 0
+----------------------------------------------------
+  i=1ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001)
+
+State 125 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 758 thread 0
+----------------------------------------------------
+  i=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 762 thread 0
+  dereference failure: pointer NULL in *(&(*((int32_t *)(void *)0)))
+  FALSE
+
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 762 thread 0
+  dereference failure: deallocated dynamic object in *(&(*((int32_t *)(void *)0)))
+  !(POINTER_OBJECT(((int32_t *)NULL)) == POINTER_OBJECT(__CPROVER_deallocated))
+
+
+
+Trace for pointer_dereference.15:
+
+State 26 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 33 thread 0
+----------------------------------------------------
+  buf=((char *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 27 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  start=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 28 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  max=8ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00001000)
+
+State 29 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 35 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 30 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 36 thread 0
+----------------------------------------------------
+  outValue=((signed int *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 34 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  malloc_size=8ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00001000)
+
+State 64 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 67 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 68 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 69 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  max=8ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00001000)
+
+Assumption:
+  tmp_cc$2 > (unsigned long int)0 && tmp_cc$2 < (unsigned long int)12 && tmp_cc$0 != ((const char *)NULL)
+
+State 80 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 81 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 82 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  max=8ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00001000)
+
+State 83 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 84 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 85 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 940 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 87 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 944 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 106 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 948 thread 0
+----------------------------------------------------
+  i=1ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001)
+
+State 125 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 758 thread 0
+----------------------------------------------------
+  i=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 762 thread 0
+  dereference failure: pointer NULL in *(&(*((int32_t *)(void *)0)))
+  FALSE
+
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 762 thread 0
+  dereference failure: deallocated dynamic object in *(&(*((int32_t *)(void *)0)))
+  !(POINTER_OBJECT(((int32_t *)NULL)) == POINTER_OBJECT(__CPROVER_deallocated))
+
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 762 thread 0
+  dereference failure: dead object in *(&(*((int32_t *)(void *)0)))
+  !(POINTER_OBJECT(((int32_t *)NULL)) == POINTER_OBJECT(__CPROVER_dead_object))
+
+
+
+Trace for pointer_dereference.16:
+
+State 26 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 33 thread 0
+----------------------------------------------------
+  buf=((char *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 27 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  start=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 28 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  max=8ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00001000)
+
+State 29 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 35 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 30 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 36 thread 0
+----------------------------------------------------
+  outValue=((signed int *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 34 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  malloc_size=8ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00001000)
+
+State 64 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 67 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 68 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 69 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  max=8ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00001000)
+
+Assumption:
+  tmp_cc$2 > (unsigned long int)0 && tmp_cc$2 < (unsigned long int)12 && tmp_cc$0 != ((const char *)NULL)
+
+State 80 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 81 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 82 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  max=8ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00001000)
+
+State 83 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 84 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 85 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 940 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 87 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 944 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 106 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 948 thread 0
+----------------------------------------------------
+  i=1ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001)
+
+State 125 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 758 thread 0
+----------------------------------------------------
+  i=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 762 thread 0
+  dereference failure: pointer NULL in *(&(*((int32_t *)(void *)0)))
+  FALSE
+
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 762 thread 0
+  dereference failure: deallocated dynamic object in *(&(*((int32_t *)(void *)0)))
+  !(POINTER_OBJECT(((int32_t *)NULL)) == POINTER_OBJECT(__CPROVER_deallocated))
+
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 762 thread 0
+  dereference failure: dead object in *(&(*((int32_t *)(void *)0)))
+  !(POINTER_OBJECT(((int32_t *)NULL)) == POINTER_OBJECT(__CPROVER_dead_object))
+
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 762 thread 0
+  dereference failure: pointer outside object bounds in *(&(*((int32_t *)(void *)0)))
+  OBJECT_SIZE(((int32_t *)NULL)) >= 4ul
+
+
+
+Trace for pointer_dereference.23:
+
+State 26 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 33 thread 0
+----------------------------------------------------
+  buf=((char *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 27 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  start=4ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000100)
+
+State 28 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 29 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 35 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 30 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 36 thread 0
+----------------------------------------------------
+  outValue=((signed int *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 34 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  malloc_size=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 64 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 67 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 68 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 69 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Assumption:
+  tmp_cc$2 > (unsigned long int)0 && tmp_cc$2 < (unsigned long int)12 && tmp_cc$0 != ((const char *)NULL)
+
+State 80 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 81 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 82 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 83 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 84 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 85 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 940 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 87 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 944 thread 0
+----------------------------------------------------
+  i=4ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000100)
+
+State 106 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 948 thread 0
+----------------------------------------------------
+  i=5ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000101)
+
+State 124 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 962 thread 0
+----------------------------------------------------
+  ret=TRUE (00000001)
+
+State 126 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 963 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 131 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 132 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  start=&i!0@1 (00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 133 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 134 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 868 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 136 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 872 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 155 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 876 thread 0
+----------------------------------------------------
+  i=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 158 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 758 thread 0
+----------------------------------------------------
+  i=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 762 thread 0
+  dereference failure: pointer NULL in *(&(*((int32_t *)(void *)0)))
+  FALSE
+
+
+
+Trace for pointer_dereference.24:
+
+State 26 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 33 thread 0
+----------------------------------------------------
+  buf=((char *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 27 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  start=4ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000100)
+
+State 28 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 29 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 35 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 30 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 36 thread 0
+----------------------------------------------------
+  outValue=((signed int *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 34 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  malloc_size=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 64 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 67 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 68 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 69 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Assumption:
+  tmp_cc$2 > (unsigned long int)0 && tmp_cc$2 < (unsigned long int)12 && tmp_cc$0 != ((const char *)NULL)
+
+State 80 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 81 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 82 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 83 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 84 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 85 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 940 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 87 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 944 thread 0
+----------------------------------------------------
+  i=4ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000100)
+
+State 106 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 948 thread 0
+----------------------------------------------------
+  i=5ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000101)
+
+State 124 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 962 thread 0
+----------------------------------------------------
+  ret=TRUE (00000001)
+
+State 126 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 963 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 131 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 132 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  start=&i!0@1 (00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 133 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 134 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 868 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 136 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 872 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 155 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 876 thread 0
+----------------------------------------------------
+  i=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 158 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 758 thread 0
+----------------------------------------------------
+  i=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 762 thread 0
+  dereference failure: pointer NULL in *(&(*((int32_t *)(void *)0)))
+  FALSE
+
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 762 thread 0
+  dereference failure: deallocated dynamic object in *(&(*((int32_t *)(void *)0)))
+  !(POINTER_OBJECT(((int32_t *)NULL)) == POINTER_OBJECT(__CPROVER_deallocated))
+
+
+
+Trace for pointer_dereference.25:
+
+State 26 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 33 thread 0
+----------------------------------------------------
+  buf=((char *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 27 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  start=4ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000100)
+
+State 28 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 29 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 35 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 30 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 36 thread 0
+----------------------------------------------------
+  outValue=((signed int *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 34 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  malloc_size=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 64 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 67 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 68 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 69 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Assumption:
+  tmp_cc$2 > (unsigned long int)0 && tmp_cc$2 < (unsigned long int)12 && tmp_cc$0 != ((const char *)NULL)
+
+State 80 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 81 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 82 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 83 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 84 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 85 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 940 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 87 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 944 thread 0
+----------------------------------------------------
+  i=4ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000100)
+
+State 106 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 948 thread 0
+----------------------------------------------------
+  i=5ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000101)
+
+State 124 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 962 thread 0
+----------------------------------------------------
+  ret=TRUE (00000001)
+
+State 126 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 963 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 131 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 132 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  start=&i!0@1 (00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 133 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 134 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 868 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 136 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 872 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 155 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 876 thread 0
+----------------------------------------------------
+  i=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 158 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 758 thread 0
+----------------------------------------------------
+  i=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 762 thread 0
+  dereference failure: pointer NULL in *(&(*((int32_t *)(void *)0)))
+  FALSE
+
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 762 thread 0
+  dereference failure: deallocated dynamic object in *(&(*((int32_t *)(void *)0)))
+  !(POINTER_OBJECT(((int32_t *)NULL)) == POINTER_OBJECT(__CPROVER_deallocated))
+
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 762 thread 0
+  dereference failure: dead object in *(&(*((int32_t *)(void *)0)))
+  !(POINTER_OBJECT(((int32_t *)NULL)) == POINTER_OBJECT(__CPROVER_dead_object))
+
+
+
+Trace for pointer_dereference.26:
+
+State 26 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 33 thread 0
+----------------------------------------------------
+  buf=((char *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 27 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  start=4ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000100)
+
+State 28 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 34 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 29 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 35 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 30 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 36 thread 0
+----------------------------------------------------
+  outValue=((signed int *)NULL) (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 34 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  malloc_size=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 64 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 40 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 67 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 68 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 69 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/skipNumber_harness.c function harness line 42 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Assumption:
+  tmp_cc$2 > (unsigned long int)0 && tmp_cc$2 < (unsigned long int)12 && tmp_cc$0 != ((const char *)NULL)
+
+State 80 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 81 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  start=&start!0@1 (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 82 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 936 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 83 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 84 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 939 thread 0
+----------------------------------------------------
+  ret=FALSE (00000000)
+
+State 85 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 940 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 87 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 944 thread 0
+----------------------------------------------------
+  i=4ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000100)
+
+State 106 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 948 thread 0
+----------------------------------------------------
+  i=5ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000101)
+
+State 124 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 962 thread 0
+----------------------------------------------------
+  ret=TRUE (00000001)
+
+State 126 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 963 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 131 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  buf=(char *)dynamic_object1 (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 132 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  start=&i!0@1 (00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 133 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipNumber line 973 thread 0
+----------------------------------------------------
+  max=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 134 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 868 thread 0
+----------------------------------------------------
+  i=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 136 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 872 thread 0
+----------------------------------------------------
+  i=6ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000110)
+
+State 155 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 876 thread 0
+----------------------------------------------------
+  i=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+State 158 file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 758 thread 0
+----------------------------------------------------
+  i=7ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000111)
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 762 thread 0
+  dereference failure: pointer NULL in *(&(*((int32_t *)(void *)0)))
+  FALSE
+
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 762 thread 0
+  dereference failure: deallocated dynamic object in *(&(*((int32_t *)(void *)0)))
+  !(POINTER_OBJECT(((int32_t *)NULL)) == POINTER_OBJECT(__CPROVER_deallocated))
+
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 762 thread 0
+  dereference failure: dead object in *(&(*((int32_t *)(void *)0)))
+  !(POINTER_OBJECT(((int32_t *)NULL)) == POINTER_OBJECT(__CPROVER_dead_object))
+
+
+Violated property:
+  file /local/home/babikian/git/coreJSON/test/cbmc/proofs/skipNumber/core_json.c function skipDecimals line 762 thread 0
+  dereference failure: pointer outside object bounds in *(&(*((int32_t *)(void *)0)))
+  OBJECT_SIZE(((int32_t *)NULL)) >= 4ul
+
+
+
+** 12 of 191 failed (7 iterations)
+VERIFICATION FAILED
+

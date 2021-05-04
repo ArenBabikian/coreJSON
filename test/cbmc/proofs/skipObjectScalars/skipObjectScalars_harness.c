@@ -21,8 +21,8 @@
  */
 
 /**
- * @file skipUTF8_harness.c
- * @brief Implements the proof harness for the skipUTF8 function.
+ * @file skipObjectScalars_harness.c
+ * @brief Implements the proof harness for the skipObjectScalars function.
  */
 
 #include <stdlib.h>
@@ -32,11 +32,10 @@ void harness()
 {
     char * buf;
     size_t start, max;
-    bool ret;
-
+    
     /* the line below will eventually be replaced by a freshness 
     clause in the precondition function */
     buf = malloc( max );
 
-    ret = skipUTF8( buf, &start, max );
+    skipObjectScalars( buf, &start, max );
 }

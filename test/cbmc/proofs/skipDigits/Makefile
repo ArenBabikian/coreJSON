@@ -1,23 +1,18 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: Apache-2.0
 
-HARNESS_FILE=skipNumber_harness
-PROOF_UID=skipNumber
+HARNESS_FILE=skipDigits_harness
+PROOF_UID=skipDigits
 
 # This value was experimentally chosen to provide 100% coverage
 # without tripping unwinding assertions and without exhausting memory.
+
+# this value comes from the old skipNumbers proof
 CBMC_MAX_BUFSIZE=12
 
-CHECK_FUNCTION_CONTRACTS += skipNumber
+CHECK_FUNCTION_CONTRACTS += skipDigits
 
-USE_FUNCTION_CONTRACTS += skipDigits
-UNWINDSET += skipDigits.0:$(CBMC_MAX_BUFSIZE)
-
-
-
-# UNWINDSET += skipDecimals.0:$(CBMC_MAX_BUFSIZE)
-# UNWINDSET += skipExponent.0:$(CBMC_MAX_BUFSIZE)
-# UNWINDSET += skipNumber.0:$(CBMC_MAX_BUFSIZE)
+UNWINDSET += __CPROVER_contracts_original_skipDigits.0:$(CBMC_MAX_BUFSIZE)
 
 include ../Makefile-json.common
 
