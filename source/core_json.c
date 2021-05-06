@@ -554,7 +554,7 @@ __CPROVER_ensures (
 static bool skipString( const char * buf,
                         size_t * start,
                         size_t max )
-/*__CPROVER_assigns(*start)*/
+__CPROVER_assigns(*start)
 __CPROVER_requires( max > 0 && max < CBMC_MAX_BUFSIZE &&
                     buf != NULL && start != NULL)
 __CPROVER_ensures ( 
@@ -783,8 +783,8 @@ __CPROVER_ensures (
                     *outValue <= MAX_INDEX_VALUE
                 )
             )
-        )
-        */
+        )*/
+        
     )
     ||
     (
@@ -796,12 +796,12 @@ __CPROVER_ensures (
             *start <= max
         )
         /*&&
-        outValue == ( __CPROVER_old(outValue) == NULL ? NULL : outValue )
-        &&
         (
             outValue == NULL
             ||
             (
+                __CPROVER_old(*outValue) == *outValue
+                ||
                 *outValue == -1
                 ||
                 (
@@ -810,8 +810,8 @@ __CPROVER_ensures (
                     *outValue <= MAX_INDEX_VALUE
                 )
             )
-        )
-        */
+        )*/
+        
     )
 )
 {
@@ -1012,6 +1012,7 @@ __CPROVER_ensures (
 static bool skipAnyScalar( const char * buf,
                            size_t * start,
                            size_t max )
+__CPROVER_assigns(*start)
 {
     bool ret = false;
 
@@ -1131,6 +1132,7 @@ __CPROVER_ensures( (__CPROVER_return_value == true) ==> *start <= max )*/
 static void skipArrayScalars( const char * buf,
                               size_t * start,
                               size_t max )
+__CPROVER_assigns(*start)
 __CPROVER_requires( max > 0 && max < CBMC_MAX_BUFSIZE &&
                     buf != NULL && start != NULL )
 __CPROVER_ensures ( 
@@ -1179,6 +1181,7 @@ __CPROVER_ensures (
 static void skipObjectScalars( const char * buf,
                                size_t * start,
                                size_t max )
+__CPROVER_assigns(*start)
 __CPROVER_requires( max > 0 && max < CBMC_MAX_BUFSIZE &&
                     buf != NULL && start != NULL )
 __CPROVER_ensures ( 
@@ -1244,6 +1247,7 @@ static void skipScalars( const char * buf,
                          size_t * start,
                          size_t max,
                          char mode )
+__CPROVER_assigns(*start)
 {
     assert( isOpenBracket_( mode ) );
 
@@ -1280,10 +1284,31 @@ static void skipScalars( const char * buf,
 static JSONStatus_t skipCollection( const char * buf,
                                     size_t * start,
                                     size_t max )
+__CPROVER_assigns(*start)
 __CPROVER_requires( max > 0 && max < CBMC_MAX_BUFSIZE &&
                     buf != NULL && start != NULL )
 __CPROVER_ensures(
-    (__CPROVER_return_value == JSONSuccess) ==> *start <= max
+    (
+        __CPROVER_return_value == JSONSuccess
+        && 
+        (
+            *start > __CPROVER_old(*start)
+            &&
+            *start <= max
+        )
+    )
+    ||
+    (
+        (
+            __CPROVER_return_value == JSONIllegalDocument
+            ||
+            __CPROVER_return_value == JSONPartial
+            ||
+            __CPROVER_return_value == JSONMaxDepthExceeded
+        )
+        &&
+        __CPROVER_old(*start) == *start
+    )
 )
 {
     JSONStatus_t ret = JSONPartial;
