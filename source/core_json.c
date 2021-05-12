@@ -256,13 +256,13 @@ __CPROVER_assigns(*start)
 static bool skipUTF8( const char * buf,
                       size_t * start,
                       size_t max )
-__CPROVER_assigns(*start)
+/*__CPROVER_assigns(*start)
 __CPROVER_requires( max > 0 && max < CBMC_MAX_BUFSIZE &&
                     buf != NULL && start != NULL )
 __CPROVER_ensures ( 
     ( __CPROVER_return_value == false && __CPROVER_old(*start) == *start )
     ||
-    ( __CPROVER_return_value == true && *start > __CPROVER_old(*start) && *start <= max ) )
+    ( __CPROVER_return_value == true && *start > __CPROVER_old(*start) && *start <= max ) )*/
 {
     bool ret = false;
 
@@ -529,13 +529,13 @@ __CPROVER_ensures (
 static bool skipString( const char * buf,
                         size_t * start,
                         size_t max )
-__CPROVER_assigns(*start)
+/*__CPROVER_assigns(*start)
 __CPROVER_requires( max > 0 && max < CBMC_MAX_BUFSIZE &&
                     buf != NULL && start != NULL)
 __CPROVER_ensures ( 
     ( __CPROVER_return_value == false && __CPROVER_old(*start) == *start )
     ||
-    ( __CPROVER_return_value == true && *start > __CPROVER_old(*start) && *start <= max ) )
+    ( __CPROVER_return_value == true && *start > __CPROVER_old(*start) && *start <= max ) )*/
 {
     bool ret = false;
     size_t i;

@@ -32,10 +32,22 @@ void harness()
 {
     char * buf;
     size_t start, max;
+    bool ret;
 
-    /* buf must not be NULL */
+    /* ASSUMPTIONS */
+    __CPROVER_assume( max > 0 );
+    __CPROVER_assume( max < CBMC_MAX_BUFSIZE );
     buf = malloc( max );
+    __CPROVER_assume( buf != NULL );
 
-    skipString( buf, &start, max );
+    /* FUNCTION CALL */
+    ret = skipString( buf, &start, max );
 
+    /* ASSERTIONS */
+    __CPROVER_assert( isBool( ret ), "A bool value is returned." );
+    if( ret == true )
+    {
+        __CPROVER_assert( start <= max,
+                          "The buffer start index does not exceed the buffer length." );
+    }
 }

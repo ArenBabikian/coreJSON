@@ -8,10 +8,9 @@ PROOF_UID=skipUTF8
 # without tripping unwinding assertions and without exhausting memory.
 CBMC_MAX_BUFSIZE=10
 
-CHECK_FUNCTION_CONTRACTS += skipUTF8
+# CHECK_FUNCTION_CONTRACTS += skipUTF8
 
 UNWINDSET += countHighBits.0:9
-# UNWINDSET += __CPROVER_contracts_original_skipUTF8.0:$(CBMC_MAX_BUFSIZE)
 UNWINDSET += skipUTF8MultiByte.0:$(CBMC_MAX_BUFSIZE)
 
 include ../Makefile-json.common
