@@ -11,3 +11,7 @@ build/
 *.gcda
 *.gcno
 *.gcov
+
+archive/
+.vscode/
+*.goto

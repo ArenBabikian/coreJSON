@@ -30,6 +30,7 @@
 
 void harness()
 {
+    /* DECLARATIONS */
     char * buf;
     size_t start, max;
     bool ret;

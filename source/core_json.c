@@ -262,7 +262,8 @@ __CPROVER_requires( max > 0 && max < CBMC_MAX_BUFSIZE &&
 __CPROVER_ensures ( 
     ( __CPROVER_return_value == false && __CPROVER_old(*start) == *start )
     ||
-    ( __CPROVER_return_value == true && *start > __CPROVER_old(*start) && *start <= max ) )*/
+    ( __CPROVER_return_value == true && *start > __CPROVER_old(*start)
+        && *start <= max ) )*/
 {
     bool ret = false;
 
@@ -535,39 +536,28 @@ __CPROVER_requires( max > 0 && max < CBMC_MAX_BUFSIZE &&
 __CPROVER_ensures ( 
     ( __CPROVER_return_value == false && __CPROVER_old(*start) == *start )
     ||
-    ( __CPROVER_return_value == true && *start > __CPROVER_old(*start) && *start <= max ) )*/
+    ( __CPROVER_return_value == true && *start > __CPROVER_old(*start)
+        && *start <= max ) )*/
 {
-    bool ret = false;
-    size_t i;
-
+    bool ret = false; size_t i;
     assert( ( buf != NULL ) && ( start != NULL ) && ( max > 0U ) );
 
     i = *start;
-
     if( ( i < max ) && ( buf[ i ] == '"' ) )
     {
         i++;
-
         while( i < max )
         {
-            if( buf[ i ] == '"' )
-            {
+            if( buf[ i ] == '"' ) {
                 ret = true;
                 i++;
                 break;
             }
-
             /* An unescaped control character is not allowed. */
-            if( iscntrl_( buf[ i ] ) )
-            {
-                break;
-            }
+            if( iscntrl_( buf[ i ] ) ) break;
             else if( buf[ i ] == '\\' )
             {
-                if( skipEscape( buf, &i, max ) != true )
-                {
-                    break;
-                }
+                if( skipEscape( buf, &i, max ) != true ) break;
             }
             else if( skipUTF8( buf, &i, max ) != true )
             {
