@@ -21,8 +21,8 @@
  */
 
 /**
- * @file skipEscape_harness.c
- * @brief Implements the proof harness for the skipEscape function.
+ * @file skipObjectScalars_harness.c
+ * @brief Implements the proof harness for the skipObjectScalars function.
  */
 
 #include <stdlib.h>
@@ -32,10 +32,10 @@ void harness()
 {
     char * buf;
     size_t start, max;
-
+    
     /* These lines are required due to CBMC limitations */
     __CPROVER_assume( max < CBMC_MAX_BUFSIZE );
     buf = malloc( max );
 
-    skipEscape( buf, &start, max );
+    skipObjectScalars( buf, &start, max );
 }

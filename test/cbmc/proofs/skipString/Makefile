@@ -8,14 +8,15 @@ PROOF_UID=skipString
 # without tripping unwinding assertions and without exhausting memory.
 CBMC_MAX_BUFSIZE=14
 
-UNWINDSET += skipString.0:$(CBMC_MAX_BUFSIZE)
+CHECK_FUNCTION_CONTRACTS += skipString
+USE_FUNCTION_CONTRACTS += skipEscape
+USE_FUNCTION_CONTRACTS += skipUTF8
 
-PROOF_SOURCES += $(PROOF_STUB)/skipGeneric.c
-PROOF_SOURCES += $(PROOF_STUB)/skipEscape.c
-PROOF_SOURCES += $(PROOF_STUB)/skipUTF8.c
+UNWINDSET += __CPROVER_contracts_original_skipString.0:$(CBMC_MAX_BUFSIZE)
+UNWINDSET += skipString.0:$(CBMC_MAX_BUFSIZE)
 
 include ../Makefile-json.common
 
 # Substitution command to pass to sed for patching core_json.c. The
 # characters " and # must be escaped with backslash.
-CORE_JSON_SED_EXPR = 1s/^/\#include \"core_json_annex.h\" /; s/^static //; s/bool skip(Escape|UTF8)\b/&_/
+CORE_JSON_SED_EXPR = s/^static //

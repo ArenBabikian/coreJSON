@@ -31,23 +31,12 @@
 void harness()
 {
     char * buf;
-    size_t start, saveStart = start, max;
+    size_t start, max;
 
-    /* max is the buffer length which must be nonzero for non-API functions. */
-    __CPROVER_assume( max > 0 );
-
-    /* max is the buffer length which must not exceed unwindings. */
+    /* These lines are required due to CBMC limitations */
     __CPROVER_assume( max < CBMC_MAX_BUFSIZE );
-
-    /* buf must not be NULL */
     buf = malloc( max );
-    __CPROVER_assume( buf != NULL );
 
     skipSpace( buf, &start, max );
 
-    if( saveStart != start )
-    {
-        __CPROVER_assert( start <= max,
-                          "The buffer start index does not exceed the buffer length." );
-    }
 }

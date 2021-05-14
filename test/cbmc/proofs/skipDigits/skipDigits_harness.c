@@ -21,8 +21,8 @@
  */
 
 /**
- * @file skipEscape_harness.c
- * @brief Implements the proof harness for the skipEscape function.
+ * @file skipNumber_harness.c
+ * @brief Implements the proof harness for the skipNumber function.
  */
 
 #include <stdlib.h>
@@ -32,10 +32,13 @@ void harness()
 {
     char * buf;
     size_t start, max;
+    int32_t * outValue;
 
     /* These lines are required due to CBMC limitations */
     __CPROVER_assume( max < CBMC_MAX_BUFSIZE );
     buf = malloc( max );
+    outValue = malloc( sizeof( *outValue ) );
 
-    skipEscape( buf, &start, max );
+    skipDigits( buf, &start, max, outValue );
+
 }

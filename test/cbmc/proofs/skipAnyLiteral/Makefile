@@ -8,8 +8,8 @@ PROOF_UID=skipAnyLiteral
 # without tripping unwinding assertions and without exhausting memory.
 CBMC_MAX_BUFSIZE=6
 
-UNWINDSET += skipAnyLiteral.0:$(CBMC_MAX_BUFSIZE)
-UNWINDSET += skipLiteral.0:$(CBMC_MAX_BUFSIZE)
+CHECK_FUNCTION_CONTRACTS += skipAnyLiteral
+
 UNWINDSET += strnEq.0:$(CBMC_MAX_BUFSIZE)
 
 include ../Makefile-json.common

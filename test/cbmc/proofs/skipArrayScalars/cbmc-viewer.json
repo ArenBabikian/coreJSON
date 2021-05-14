@@ -1,0 +1,7 @@
+{ "expected-missing-functions":
+  [
+
+  ],
+  "proof-name": "skipArrayScalars",
+  "proof-root": "test/cbmc/proofs"
+}

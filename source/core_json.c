@@ -64,6 +64,13 @@ typedef union
 static void skipSpace( const char * buf,
                        size_t * start,
                        size_t max )
+__CPROVER_assigns(*start)
+__CPROVER_requires( max > 0 && buf != NULL && start != NULL)
+__CPROVER_ensures ( 
+    ( __CPROVER_old(*start) == *start )
+    ||
+    ( *start > __CPROVER_old(*start) && *start <= max)
+)
 {
     size_t i;
 
@@ -180,6 +187,7 @@ static bool shortestUTF8( size_t length,
 static bool skipUTF8MultiByte( const char * buf,
                                size_t * start,
                                size_t max )
+__CPROVER_assigns(*start)
 {
     bool ret = false;
     size_t i, bitCount, j;
@@ -244,6 +252,12 @@ static bool skipUTF8MultiByte( const char * buf,
 static bool skipUTF8( const char * buf,
                       size_t * start,
                       size_t max )
+__CPROVER_assigns(*start)
+__CPROVER_requires( max > 0 && buf != NULL && start != NULL )
+__CPROVER_ensures ( 
+    ( __CPROVER_return_value == false && __CPROVER_old(*start) == *start )
+    ||
+    ( __CPROVER_return_value == true && *start > __CPROVER_old(*start) && *start <= max ) )
 {
     bool ret = false;
 
@@ -380,6 +394,7 @@ static bool skipOneHexEscape( const char * buf,
 static bool skipHexEscape( const char * buf,
                            size_t * start,
                            size_t max )
+__CPROVER_assigns(*start)
 {
     bool ret = false;
     size_t i;
@@ -432,6 +447,13 @@ static bool skipHexEscape( const char * buf,
 static bool skipEscape( const char * buf,
                         size_t * start,
                         size_t max )
+__CPROVER_assigns(*start)
+__CPROVER_requires( max > 0 && buf != NULL && start != NULL)
+__CPROVER_ensures ( 
+    ( __CPROVER_return_value == false &&  __CPROVER_old(*start) == *start )
+    ||
+    ( __CPROVER_return_value == true && *start > __CPROVER_old(*start) && *start <= max )
+)
 {
     bool ret = false;
     size_t i;
@@ -499,6 +521,12 @@ static bool skipEscape( const char * buf,
 static bool skipString( const char * buf,
                         size_t * start,
                         size_t max )
+__CPROVER_assigns(*start)
+__CPROVER_requires( max > 0 && buf != NULL && start != NULL)
+__CPROVER_ensures ( 
+    ( __CPROVER_return_value == false && __CPROVER_old(*start) == *start )
+    ||
+    ( __CPROVER_return_value == true && *start > __CPROVER_old(*start) && *start <= max ) )
 {
     bool ret = false;
     size_t i;
@@ -519,18 +547,20 @@ static bool skipString( const char * buf,
                 i++;
                 break;
             }
-
-            if( buf[ i ] == '\\' )
+            /* TODO: a code modification is required here to make
+            the proof work. Please revert this modification when
+            submitting a PR. */
+            /* An unescaped control character is not allowed. */
+            if( iscntrl_( buf[ i ] ) )
+            {
+                break;
+            }
+            else if( buf[ i ] == '\\' )
             {
                 if( skipEscape( buf, &i, max ) != true )
                 {
                     break;
                 }
-            }
-            /* An unescaped control character is not allowed. */
-            else if( iscntrl_( buf[ i ] ) )
-            {
-                break;
             }
             else if( skipUTF8( buf, &i, max ) != true )
             {
@@ -597,6 +627,7 @@ static bool skipLiteral( const char * buf,
                          size_t max,
                          const char * literal,
                          size_t length )
+__CPROVER_assigns(*start)
 {
     bool ret = false;
 
@@ -629,6 +660,13 @@ static bool skipLiteral( const char * buf,
 static bool skipAnyLiteral( const char * buf,
                             size_t * start,
                             size_t max )
+__CPROVER_assigns(*start)
+__CPROVER_requires(max > 0 && buf != NULL && start != NULL)
+__CPROVER_ensures ( 
+    ( __CPROVER_return_value == false && __CPROVER_old(*start) == *start )
+    ||
+    ( __CPROVER_return_value == true && *start > __CPROVER_old(*start) && *start <= max )
+)
 {
     bool ret = false;
 
@@ -663,6 +701,25 @@ static bool skipDigits( const char * buf,
                         size_t * start,
                         size_t max,
                         int32_t * outValue )
+__CPROVER_assigns(*start, *outValue)
+__CPROVER_requires(max > 0 && buf != NULL && start != NULL)
+__CPROVER_ensures (
+    (
+        ( __CPROVER_return_value == false && __CPROVER_old(*start) == *start )
+        ||
+        ( __CPROVER_return_value == true && *start > __CPROVER_old(*start) && *start <= max)
+    )
+    /*&&
+    (
+        outValue == NULL
+        ||
+        __CPROVER_old(*outValue) == *outValue
+        ||
+        *outValue == -1
+        ||
+        ( *outValue >= 0 && *outValue <= MAX_INDEX_VALUE )
+    )*/
+)
 {
     bool ret = false;
     size_t i, saveStart;
@@ -718,6 +775,7 @@ static bool skipDigits( const char * buf,
 static void skipDecimals( const char * buf,
                           size_t * start,
                           size_t max )
+__CPROVER_assigns(*start)
 {
     size_t i;
 
@@ -746,6 +804,7 @@ static void skipDecimals( const char * buf,
 static void skipExponent( const char * buf,
                           size_t * start,
                           size_t max )
+__CPROVER_assigns(*start)
 {
     size_t i;
 
@@ -782,6 +841,13 @@ static void skipExponent( const char * buf,
 static bool skipNumber( const char * buf,
                         size_t * start,
                         size_t max )
+__CPROVER_assigns(*start)
+__CPROVER_requires(max > 0 && max < CBMC_MAX_BUFSIZE && buf != NULL)
+__CPROVER_ensures ( 
+    ( __CPROVER_return_value == false && __CPROVER_old(*start) == *start )
+    ||
+    ( __CPROVER_return_value == true && *start > __CPROVER_old(*start) && *start <= max )
+)
 {
     bool ret = false;
     size_t i;
@@ -838,6 +904,7 @@ static bool skipNumber( const char * buf,
 static bool skipAnyScalar( const char * buf,
                            size_t * start,
                            size_t max )
+__CPROVER_assigns(*start)
 {
     bool ret = false;
 
@@ -868,6 +935,17 @@ static bool skipAnyScalar( const char * buf,
 static bool skipSpaceAndComma( const char * buf,
                                size_t * start,
                                size_t max )
+__CPROVER_assigns(*start)
+__CPROVER_requires( max > 0 && buf != NULL && start != NULL )
+__CPROVER_ensures ( 
+    (
+        ( __CPROVER_old(*start) == *start )
+        ||
+        ( *start > __CPROVER_old(*start) && *start <= max )  
+    )
+    &&
+    ( __CPROVER_return_value == true ==> __CPROVER_old(*start) != *start )
+)
 {
     bool ret = false;
     size_t i;
@@ -904,6 +982,13 @@ static bool skipSpaceAndComma( const char * buf,
 static void skipArrayScalars( const char * buf,
                               size_t * start,
                               size_t max )
+__CPROVER_assigns(*start)
+__CPROVER_requires( max > 0 && buf != NULL && start != NULL )
+__CPROVER_ensures ( 
+    ( __CPROVER_old(*start) == *start )
+    ||
+    ( *start > __CPROVER_old(*start) && *start <= max)
+)
 {
     size_t i;
 
@@ -945,6 +1030,13 @@ static void skipArrayScalars( const char * buf,
 static void skipObjectScalars( const char * buf,
                                size_t * start,
                                size_t max )
+__CPROVER_assigns(*start)
+__CPROVER_requires( max > 0 && buf != NULL && start != NULL )
+__CPROVER_ensures ( 
+    ( __CPROVER_old(*start) == *start )
+    ||
+    ( *start > __CPROVER_old(*start) && *start <= max)
+)
 {
     size_t i;
     bool comma;
@@ -1003,6 +1095,7 @@ static void skipScalars( const char * buf,
                          size_t * start,
                          size_t max,
                          char mode )
+__CPROVER_assigns(*start)
 {
     assert( isOpenBracket_( mode ) );
 
@@ -1039,6 +1132,21 @@ static void skipScalars( const char * buf,
 static JSONStatus_t skipCollection( const char * buf,
                                     size_t * start,
                                     size_t max )
+__CPROVER_assigns(*start)
+__CPROVER_requires( max > 0 && buf != NULL && start != NULL )
+__CPROVER_ensures(
+    ( __CPROVER_return_value == JSONSuccess && *start > __CPROVER_old(*start) && *start <= max )
+    ||
+    (
+        (
+            __CPROVER_return_value == JSONIllegalDocument ||
+            __CPROVER_return_value == JSONPartial ||
+            __CPROVER_return_value == JSONMaxDepthExceeded
+        )
+        &&
+        __CPROVER_old(*start) == *start
+    )
+)
 {
     JSONStatus_t ret = JSONPartial;
     char c, stack[ JSON_MAX_DEPTH ];

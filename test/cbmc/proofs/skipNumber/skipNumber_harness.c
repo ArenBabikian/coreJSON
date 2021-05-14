@@ -32,39 +32,15 @@ void harness()
 {
     char * buf;
     size_t start, max;
-    bool ret;
     int32_t * outValue;
 
-    /* max is the buffer length which must be nonzero for non-API functions. */
-    __CPROVER_assume( max > 0 );
-
-    /* max is the buffer length which must not exceed unwindings. */
+    /* These lines are required due to CBMC limitations */
     __CPROVER_assume( max < CBMC_MAX_BUFSIZE );
-
-    /* buf must not be NULL */
     buf = malloc( max );
-    __CPROVER_assume( buf != NULL );
 
-    ret = skipNumber( buf, &start, max );
+    skipNumber( buf, &start, max );
 
-    __CPROVER_assert( isBool( ret ), "A bool value is returned." );
-
-    if( ret == true )
-    {
-        __CPROVER_assert( start <= max,
-                          "The buffer start index does not exceed the buffer length." );
-    }
-
-    /* outValue may be NULL */
-    outValue = malloc( sizeof( *outValue ) );
-
-    ret = skipDigits( buf, &start, max, outValue );
-
-    __CPROVER_assert( isBool( ret ), "A bool value is returned." );
-
-    if( ( ret == true ) && ( outValue != NULL ) )
-    {
-        __CPROVER_assert( ( ( *outValue == -1 ) || ( ( *outValue >= 0 ) && ( *outValue <= MAX_INDEX_VALUE ) ) ),
-                          "The converted integer is within the permitted range or is -1." );
-    }
+    /* Note that this proof also formerly contained a prof for
+    skipDigits. With the use of function contracts, skipDigits
+    now has it's own separate proof. */
 }
